@@ -1,27 +1,27 @@
-workflow "Build, Test, Lint and Publish" {
+workflow "Install, Test, Lint and Publish" {
   on = "push"
   resolves = ["Publish"]
 }
 
-action "Build" {
+action "Install" {
   uses = "actions/npm@master"
   args = "install"
 }
 
 action "Lint" {
-  needs = "Build"
+  needs = "Install"
   uses = "actions/npm@master"
   args = "run lint"
 }
 
 action "Test" {
-  needs = "Build"
+  needs = "Install"
   uses = "actions/npm@master"
   args = "test"
 }
 
 action "Types" {
-  needs = "Build"
+  needs = "Install"
   uses = "actions/npm@master"
   args = "run types"
 }
