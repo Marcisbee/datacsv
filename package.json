@@ -1,0 +1,43 @@
+{
+  "name": "datacsv",
+  "version": "1.0.0",
+  "description": "Very simple file based database for node",
+  "main": "src/index.js",
+  "scripts": {
+    "start": "node ./index.js",
+    "lint": "eslint .",
+    "test": "jest",
+    "test:watch": "jest --watch --notify --notifyMode=change --coverage",
+    "types": "tsc --p jsconfig.json"
+  },
+  "dependencies": {
+    "csv-string": "^3.1.5",
+    "csvtojson": "^2.0.8",
+    "fs-extra": "^8.0.1",
+    "shortid": "^2.2.14"
+  },
+  "devDependencies": {
+    "@types/jest": "^24.0.13",
+    "@types/node": "^12.0.4",
+    "eslint": "^5.16.0",
+    "eslint-config-airbnb-base": "^13.1.0",
+    "eslint-plugin-import": "^2.17.3",
+    "jest": "^24.8.0",
+    "typescript": "^3.5.1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Marcisbee/datacsv.git"
+  },
+  "keywords": [
+    "validator",
+    "valid",
+    "validate"
+  ],
+  "author": "Marcis Bergmanis <marcisbergmanis@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Marcisbee/datacsv/issues"
+  },
+  "homepage": "https://github.com/Marcisbee/datacsv#readme"
+}
