@@ -5,18 +5,19 @@
  */
 function match(source, filter) {
   const keys = Object.keys(filter || {});
-  let hasMatch = false;
 
   // If no filter, apply to all
   if (keys.length <= 0) return true;
 
-  keys.forEach((key) => {
-    if (source[key] === filter[key]) {
-      hasMatch = true;
+  const matchedKeys = keys.reduce((acc, key) => {
+    if ((source && source[key]) === filter[key]) {
+      return acc + 1;
     }
-  });
 
-  return hasMatch;
+    return acc;
+  }, 0);
+
+  return matchedKeys === keys.length;
 }
 
 module.exports = match;
